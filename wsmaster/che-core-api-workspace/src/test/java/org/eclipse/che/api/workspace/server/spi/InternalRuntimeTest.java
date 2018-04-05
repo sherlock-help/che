@@ -39,6 +39,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.eclipse.che.api.core.ValidationException;
 import org.eclipse.che.api.core.model.workspace.Warning;
+import org.eclipse.che.api.core.model.workspace.WorkspaceStatus;
 import org.eclipse.che.api.core.model.workspace.config.ServerConfig;
 import org.eclipse.che.api.core.model.workspace.runtime.Machine;
 import org.eclipse.che.api.core.model.workspace.runtime.MachineStatus;
@@ -57,6 +58,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+// TODO Adapt tests
 /** @author Alexander Garagatyi */
 public class InternalRuntimeTest {
   private static final long SECOND_IN_MILLISECONDS = 1_000L;
@@ -633,7 +635,7 @@ public class InternalRuntimeTest {
           new TestRuntimeContext(null, new RuntimeIdentityImpl("ws", "env", "id"), null),
           urlRewriter,
           emptyList(),
-          running);
+          WorkspaceStatus.RUNNING);
     }
 
     @Override
